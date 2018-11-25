@@ -24,7 +24,7 @@ class Api::V1::StocksController < ApplicationController
   #params method to prevent weird injections from frontend. Only allow parameters
   #required for model initialization.
   def stock_params
-    params.permit(:tickername, :stock_id)
+    params.permit(:tickername, :stock_id, :quantity, :portfolio_id)
   end
 
   def find_stock
