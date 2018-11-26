@@ -24,7 +24,7 @@ class Api::V1::UsersController < ApplicationController
   #params method to prevent weird injections from frontend. Only allow parameters
   #required for model initialization.
   def user_params
-    params.permit(:name, :user_id, :email)
+    params.permit(:username, :user_id, :email)
   end
 
   def find_user
