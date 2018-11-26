@@ -20,10 +20,8 @@ export default class WelcomePage extends Component {
     switch (this.state.LoginOrRegister) {
       case "Login":
         return (<LoginForm />)
-        break
       case "Register":
         return (<RegisterForm />)
-        break
       default:
         return (<div> {this.LoginButton()} | {this.RegisterButton()} </div>)
     }
