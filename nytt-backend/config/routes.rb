@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :users
       resources :transactions
       resources :stocks
+      resources :portfolios
     end
   end
 end
