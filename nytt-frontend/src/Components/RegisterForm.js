@@ -13,9 +13,22 @@ class RegisterForm extends Component {
     })
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault()
+    fetch('http://localhost:4000/api/v1/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({username: this.state.username, email: this.state.email})
+    })
+    .then(resp => resp.json())
+    .then(json => console.log(json))
+  }
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <label>
           Username:
           <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
